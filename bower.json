@@ -1,0 +1,19 @@
+{
+  "name": "gulp-starter",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Yaroslav Vavrysh <yaruk.my@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/mrself/gulp-skelet",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
