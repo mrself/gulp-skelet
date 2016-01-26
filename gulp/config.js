@@ -21,5 +21,10 @@ module.exports = {
 		},
 		dest: './css/',
 		src: src + 'scss/**/*.scss'
+	},
+
+	browserSync: {
+		name: 'server',
+		dir: './server'
 	}
-}
+};
