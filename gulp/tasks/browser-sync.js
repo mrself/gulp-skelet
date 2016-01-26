@@ -5,8 +5,8 @@ var gulp = require('gulp'),
 gulp.task('browserSync', function() {
 	browserSync.init({
 		server: {
-			baseDir: config.dir,
-			files: [config.server + '/**/*.html']
-		}
+			baseDir: config.dir
+		},
+		files: [config.dir + '/**/*.html']
 	});
 });

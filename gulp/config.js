@@ -1,5 +1,5 @@
 var src = './src/';
-var build = './build/';
+var build = './server/';
 var bourbon = require('node-bourbon');
 
 module.exports = {
@@ -19,7 +19,7 @@ module.exports = {
 				'bower_components/bootstrap-sass/assets/stylesheets'
 			]
 		},
-		dest: './css/',
+		dest: build + 'css/',
 		src: src + 'scss/**/*.scss'
 	},
 

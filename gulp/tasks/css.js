@@ -3,18 +3,20 @@ var gulp = require('gulp'),
 	watch = require('gulp-watch'),
 	rename = require('gulp-rename'),
 	cssNano = require('gulp-cssnano'),
-	config = require('../config').css;
+	config = require('../config'),
+	browserSync = require('browser-sync').get(config.browserSync.name);	
 
 gulp.task('css', function() {
-	return gulp.src(config.src)
-		.pipe(sass(config.settings))
+	return gulp.src(config.css.src)
+		.pipe(sass(config.css.settings))
 		.pipe(cssNano())
 		.pipe(rename('app.min.css'))
-		.pipe(gulp.dest(config.dest));
+		.pipe(gulp.dest(config.css.dest))
+		.pipe(browserSync.reload({stream: true}));
 });
 
 gulp.task('css:watch', function() {
-	watch(config.src, function() {
+	watch(config.css.src, function() {
 		gulp.start('css');
 	});
 });
