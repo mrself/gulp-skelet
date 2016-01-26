@@ -4,8 +4,11 @@ var browserify = require('browserify'),
 	gulp = require('gulp'),
 	gutil = require('gulp-util'),
 	config = require('../config').browserify,
-	bundleLogger = require('../utils/bundleLogger');
+	bundleLogger = require('../utils/bundleLogger'),
 	notify = require('gulp-notify');
+
+var browserSyncName = require('../config').browserSync.name;
+var browserSync = require('browser-sync').get(browserSyncName);
 
 gulp.task('browserify', function() {
 	function browserifyThis (bundleConfig) {
@@ -22,7 +25,8 @@ gulp.task('browserify', function() {
 				.pipe(source(bundleConfig.outputName))
 				.pipe(gulp.dest(bundleConfig.dest))
 				.on('end', function() {
-					bundleLogger.end(bundleConfig.outputName)
+					bundleLogger.end(bundleConfig.outputName);
+					browserSync.reload();
 				});
 		}
 		watcher.on('update', bundle);
