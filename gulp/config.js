@@ -6,7 +6,7 @@ module.exports = {
 	browserify: {
 		bundleConfigs: [{
 			entries: src + 'js/app.js',
-			dest: './js',
+			dest: build + 'js',
 			outputName: 'app.min.js'
 		}]
 	},
