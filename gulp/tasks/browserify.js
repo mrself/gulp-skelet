@@ -5,7 +5,7 @@ var browserify = require('browserify'),
 	gutil = require('gulp-util'),
 	config = require('../config').browserify,
 	bundleLogger = require('../utils/bundleLogger'),
-	notify = require('gulp-notify');
+	handleErrors = require('../utils/handleErrors');
 
 var browserSyncName = require('../config').browserSync.name;
 var browserSync = require('browser-sync').get(browserSyncName);
@@ -35,13 +35,3 @@ gulp.task('browserify', function() {
 	}
 	config.bundleConfigs.forEach(browserifyThis);
 });
-
-function handleErrors (error) {
-	var args = Array.prototype.slice.call(arguments);
-	// gutil.log(error.stack);
-	notify.onError({
-		title: "Compile Error",
-		message: "<%= error.message %>"
-	}).apply(this, args);
-	this.emit('end'); // Keep gulp from hanging on this task
-}
