@@ -9,9 +9,8 @@
   "author": "Yaroslav Vavrysh <yaruk.my@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "bootstrap": "^3.3.5",
     "browser-sync": "^2.11.1",
-    "browserify": "^11.2.0",
+    "browserify": "^13.0.0",
     "gulp": "^3.9.0",
     "gulp-cssnano": "^2.1.0",
     "gulp-notify": "^2.2.0",
